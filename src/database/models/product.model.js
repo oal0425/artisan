@@ -7,8 +7,8 @@ const productSchema = new mongoose.Schema({
     },
     description: String,
     price: Number,
-    artisan: {type: mongoose.Schema.Types.ObjectId, ref: "Artisan"},
-})
+    image: String
+});
 
 const Product = mongoose.model("Product", productSchema);
 

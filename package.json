@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "dev": "node --watch ./src/app.js",
+    "seed": "node ./src/database/seeders/seedModels.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -19,5 +20,8 @@
     "express-handlebars": "^8.0.3",
     "express-validator": "^7.3.0",
     "mongoose": "^8.19.3"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^10.1.0"
   }
 }

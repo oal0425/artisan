@@ -18,7 +18,9 @@ async function closeConnectionDB(){
     console.log("Connection Closed 🔐");
 };
 
-export default{
+const connection ={
     connectToDB,
     closeConnectionDB
-};
+}
+
+export default connection;
