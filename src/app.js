@@ -4,6 +4,15 @@ import staticConfig from "./config/static.js";
 import conn from "./database/connection.js";
 import config from "./database/config.js";
 
+// Routes
+import productRoutes from './routes/product.route.js';
+import locationRoutes from './routes/location.route.js';
+import artisanRoutes from './routes/artisan.route.js';
+app.use('/products', productRoutes);
+app.use('/locations', locationRoutes);
+app.use('/artisans', artisanRoutes);
+
+
 const app = express();
 
 // AGREGAMOS BOOTSTRAP
