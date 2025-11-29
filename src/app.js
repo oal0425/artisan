@@ -8,9 +8,7 @@ import config from "./database/config.js";
 import productRoutes from './routes/product.route.js';
 import locationRoutes from './routes/location.route.js';
 import artisanRoutes from './routes/artisan.route.js';
-app.use('/products', productRoutes);
-app.use('/locations', locationRoutes);
-app.use('/artisans', artisanRoutes);
+
 
 
 const app = express();
@@ -24,6 +22,12 @@ app.use('/js', express.static('node_modules/bootstrap/dist/js'));
 //handlebars configurations
 staticConfig(app);
 handlebarsConfig(app);
+
+
+//Routes Used
+app.use('/products', productRoutes);
+app.use('/locations', locationRoutes);
+app.use('/artisans', artisanRoutes);
 
 const startServer = async () => {
     try{
