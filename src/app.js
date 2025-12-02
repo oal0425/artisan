@@ -5,40 +5,44 @@ import conn from "./database/connection.js";
 import config from "./database/config.js";
 
 // Routes
-import productRoutes from './routes/product.route.js';
-import locationRoutes from './routes/location.route.js';
-import artisanRoutes from './routes/artisan.route.js';
-
-
+import viewRoutes from "./routes/view.routes.js";
+import productRoutes from "./routes/product.route.js";
+import locationRoutes from "./routes/location.route.js";
+import artisanRoutes from "./routes/artisan.route.js";
 
 const app = express();
 
 // AGREGAMOS BOOTSTRAP
 // npm install bootstrap
 // CONFIGURACIÓN DE ARCHIVOS ESTÁTICOS
-app.use('/css', express.static('node_modules/bootstrap/dist/css'));
-app.use('/js', express.static('node_modules/bootstrap/dist/js'));
+app.use("/css", express.static("node_modules/bootstrap/dist/css"));
+app.use("/js", express.static("node_modules/bootstrap/dist/js"));
+
+//Routes Used
+app.use("/", viewRoutes);
+app.use("/products", productRoutes);
+app.use("/locations", locationRoutes);
+app.use("/artisans", artisanRoutes);
+
 
 //handlebars configurations
 staticConfig(app);
 handlebarsConfig(app);
 
-
-//Routes Used
-app.use('/products', productRoutes);
-app.use('/locations', locationRoutes);
-app.use('/artisans', artisanRoutes);
-
 const startServer = async () => {
-    try{
-        await conn.connectToDB();
-        app.listen(config.port, () =>{
-            console.log(`Conectando al puerto ${config.PORT}`);
-        });
-    } catch (error){
-        console.error("Error al conectar a la base de datos ", error);
-        
-    }
+  try {
+    await conn.connectToDB();
+    app.listen(config.PORT, () => {
+      console.log(`Conectando al puerto ${config.PORT}`);
+    });
+    
+  } catch (error) {
+    console.error("Error al conectar a la base de datos ", error);
+  }
 };
 
-startServer();
+async function main() {
+  startServer();
+}
+
+main();
