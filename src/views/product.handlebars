@@ -1,0 +1,13 @@
+<h2>Products</h2>
+<ul>
+  {{#each products}}
+    <li>
+      <a href="/products/{{this._id}}">{{this.name}}</a><br />
+      {{this.description}}<br />
+      ${{this.price}}<br />
+      {{#if this.image}}
+        <img src="{{this.image}}" width="120" />
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>

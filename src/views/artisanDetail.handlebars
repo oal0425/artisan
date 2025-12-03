@@ -1,0 +1,22 @@
+<h2>{{artisan.name}}</h2>
+
+<p>Specialty: {{artisan.specialty}}</p>
+<p>Location:
+  <a href="/locations/{{artisan.location._id}}">
+    {{artisan.location.name}}
+  </a>
+</p>
+
+<h3>Products:</h3>
+<ul>
+  {{#each artisan.products}}
+    <li>
+      <a href="/products/{{this._id}}">{{this.name}}</a>
+      - ${{this.price}}
+      {{#if this.image}}
+        <br/>
+        <img src="{{this.image}}" width="120" />
+      {{/if}}
+    </li>
+  {{/each}}
+</ul>
