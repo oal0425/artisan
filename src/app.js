@@ -29,6 +29,8 @@ app.use("/artisans", artisanRoutes);
 staticConfig(app);
 handlebarsConfig(app);
 
+app.use(express.static("src/public"));
+
 const startServer = async () => {
   try {
     await conn.connectToDB();
