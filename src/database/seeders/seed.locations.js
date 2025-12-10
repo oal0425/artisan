@@ -9,7 +9,8 @@ const generateLocations = () =>{
         const location = {
             name: faker.location.city(),
             description: faker.company.catchPhrase(),
-            region: faker.location.county()
+            region: faker.location.county(),
+            image: faker.image.url({width: 320, height: 320, category: 'landscape'}),
         }
         locations.push(location);
     };

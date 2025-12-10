@@ -7,6 +7,7 @@ const locationSchema = new mongoose.Schema({
     },
     description: String,
     region: String,
+    image: String
 });
 
 const Location = mongoose.model("Location", locationSchema);
