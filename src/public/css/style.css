@@ -1,0 +1,59 @@
+/* -----------------------------------------
+   GENERAL
+----------------------------------------- */
+html[data-theme="light"] {
+    --bg-color: #ffffff;
+    --text-color: #222;
+    --card-bg: #ffffff;
+}
+
+html[data-theme="dark"] {
+    --bg-color: #121212;
+    --text-color: #f1f1f1;
+    --card-bg: #1e1e1e;
+}
+
+body {
+    background: var(--bg-color);
+    color: var(--text-color);
+    transition: all 0.3s ease;
+}
+
+.card {
+    background: var(--card-bg);
+    transition: all 0.3s ease;
+}
+
+/* -----------------------------------------
+   HERO SECTION
+----------------------------------------- */
+.hero-section {
+    height: 100vh;
+    background: url('/images/artisan2.jpg') center/cover fixed no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Fade-in Animation */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* -----------------------------------------
+   FOOTER
+----------------------------------------- */
+.footer {
+    background: var(--card-bg);
+    color: var(--text-color);
+    border-top: 1px solid #ccc;
+}

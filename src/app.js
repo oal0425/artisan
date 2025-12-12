@@ -9,6 +9,7 @@ import viewRoutes from "./routes/view.routes.js";
 import productRoutes from "./routes/product.route.js";
 import locationRoutes from "./routes/location.route.js";
 import artisanRoutes from "./routes/artisan.route.js";
+import apiRoutes from "./routes/api.js";
 
 const app = express();
 
@@ -23,7 +24,7 @@ app.use("/", viewRoutes);
 app.use("/products", productRoutes);
 app.use("/locations", locationRoutes);
 app.use("/artisans", artisanRoutes);
-
+app.use("/api", apiRoutes);
 
 //handlebars configurations
 staticConfig(app);

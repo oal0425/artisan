@@ -1,41 +1,32 @@
-<h1>Bienvenido a RURAQ MAKI -- Hecho a mano</h1>
+
+
+
+
+<!-- INTRODUCTION -->
 <section id="intro" class="py-5">
-  <div class="container">
-    <div class="row align-items-center">
-
-      <div class="col-md-6">
-        <h2 class="fw-bold mb-3">Craftsmanship with Soul</h2>
-        <p>
-          Every piece we create tells a story. Using traditional methods passed
-          down through generations, our artisans transform simple materials into
-          meaningful art.
-        </p>
-        <p>
-          We take pride in supporting local creativity and promoting the
-          heritage of handmade craftsmanship.
-        </p>
-      </div>
-
-      <div class="col-md-6">
-        <img
-          src="/images/artisan1.jpg"
-          class="img-fluid rounded shadow"
-          alt="Artisan working"
-        />
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- LOCATIONS SECTION -->
-<section id="locations" class="py-5 bg-light">
     <div class="container">
-        <h2 class="text-center fw-bold mb-5">Our Locations</h2>
+        <div class="row align-items-center">
+            
+            <div class="col-md-6">
+                <h2 class="fw-bold mb-3">Craftsmanship with Soul</h2>
+                <p>Every piece we create tells a story...</p>
+            </div>
 
-        <div class="row" id="location-cards">
-            {{!-- Handlebars partial will render here --}}
-            {{> locations }}
+            <div class="col-md-6">
+                <img src="/images/artisan1.jpg" class="img-fluid rounded shadow" alt="Artisan working">
+            </div>
+
         </div>
     </div>
 </section>
+
+<!-- LOCATIONS (Loaded by AJAX) -->
+<section id="locations" class="py-5 bg-light">
+    <div class="container">
+        <h2 class="text-center fw-bold mb-5">Our Locations</h2>
+        <div class="row" id="location-cards">
+            {{!-- Cards inserted dynamically --}}
+        </div>
+    </div>
+</section>
+

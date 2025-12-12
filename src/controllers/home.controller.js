@@ -1,7 +1,5 @@
-import locationsService from '../services/location.service.js';
 export const getHome = (req, res) => {
-    const locations = locationsService.getAll();
-    res.render('home', {title:"Bienvenido a Ruraq Maki"}, {locations});
+    res.render('home', {title:"Bienvenido a Ruraq Maki"});
 };
 
 export const getAbout = (req, res) =>{

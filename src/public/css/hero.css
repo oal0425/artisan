@@ -1,0 +1,7 @@
+.hero-section {
+    height: 100vh;
+    background: url('/images/artisan2.jpg') center/cover fixed no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
