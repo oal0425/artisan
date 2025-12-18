@@ -33,6 +33,7 @@ const generateArtisanObjects = (locations, products, count = 10) =>{
         const artisanProducts = selecRandomProducts(products);
         const artisan = {
             name: faker.person.fullName(),
+            image: faker.image.avatar(),
             specialty: faker.person.jobTitle(),
             location: randomLocation._id,
             products: artisanProducts.map(p => p._id),

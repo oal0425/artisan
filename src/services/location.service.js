@@ -8,7 +8,7 @@ export const getAll = async () =>{
     }
 }
 
-export const getAllAPI = async (req, res) => {
+export const getAllAPILocations = async (req, res) => {
     try{
         const locations = await Location.find();
         res.json(locations);

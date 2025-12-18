@@ -5,6 +5,7 @@ const artisanSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
+  image: String,
   specialty: String,
   location: {type: mongoose.Schema.Types.ObjectId, ref: "Location"},
   products: [{type: mongoose.Schema.Types.ObjectId, ref: "Product"}]
