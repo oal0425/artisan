@@ -1,7 +1,24 @@
+/* -----------------------------------------
+   HERO SECTION
+----------------------------------------- */
 .hero-section {
     height: 100vh;
     background: url('/images/artisan2.jpg') center/cover fixed no-repeat;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+/* Fade-in Animation */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(40px);
+    animation: fadeInUp 1.2s ease forwards;
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
 }
