@@ -1,8 +1,8 @@
-const fetchLocations = () => {
+const fetchLocations = (limit = 6) => {
   //--------------------------
   // LOAD LOCATIONS BY AJAX THE AYAX
   //--------------------------
-  fetch("/api/locationsApi")
+  fetch(`/api/locationsApi?limit=${limit}`)
     .then((res) => res.json())
     .then((locations) => {
       const container = document.getElementById("location-cards");
@@ -44,8 +44,8 @@ const fetchArtisans = () => {
     });
 };
 
-const fetchProducts = () =>{
-  fetch("/api/productsApi")
+const fetchProducts = (limit = 6) =>{
+  fetch(`/api/productsApi?limit=${limit}`)
   .then((res) => res.json())
   .then((products) =>{
     const container = document.getElementById("product-cards");

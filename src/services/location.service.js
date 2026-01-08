@@ -8,6 +8,18 @@ export const getAll = async () =>{
     }
 }
 
+
+export const getNumberAPILocations = async (req, res) =>{
+    try{
+        const limit = parseInt(req.query.limit) || 0;
+        const locations = await Location.find().limit(limit);
+        res.json(locations);
+    }catch(error){
+        res.status(500).json({ message: "Error fetching the specific number of locations: "+limit });
+    }
+}
+
+
 export const getAllAPILocations = async (req, res) => {
     try{
         const locations = await Location.find();
