@@ -13,6 +13,16 @@ export const getAllAPIArtisans = async (req, res) => {
     }
 }
 
+export const getNumberAPIArtisans = async (req, res) =>{
+    try{
+        const limit = parseInt(req.query.limit) || 0;
+        const artisans = await Artisan.find().limit(limit);
+        res.json(artisans);
+    }catch(error){
+        res.status(500).json({ message: "Error fetching the specific number of artisans: "+limit});
+    }
+}
+
 export const getById = async (id) =>{
     return await Artisan.findById(id).lean();
 }

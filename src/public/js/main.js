@@ -23,8 +23,8 @@ const fetchLocations = (limit = 6) => {
     });
 };
 
-const fetchArtisans = () => {
-  fetch("/api/artisansApi")
+const fetchArtisans = (limit=10) => {
+  fetch(`/api/artisansApi?limit=${limit}`)
     .then((res) => res.json())
     .then((artisans) => {
       const container = document.getElementById("artisan-cards");
