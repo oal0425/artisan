@@ -16,6 +16,7 @@ const fetchLocations = (limit = 6) => {
                             <h5 class="card-title"> ${loc.name}</h5>
                             <p class="card-text">${loc.description}</p>
                         </div>
+                        <a href="/locations/${loc._id}" class="btn btn-primary">View Location</a>
                     </div>
                 </div>
             `;
