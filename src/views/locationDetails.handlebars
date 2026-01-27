@@ -11,4 +11,21 @@
   <p><strong>Region:</strong> {{location.region}}</p>
 </div>
 
-{{!-- Add the artisan cards through AJAX --}}
+{{! Add the artisan cards through AJAX }}
+<h2 class="mt-4">Local Artisans</h2>
+
+<div class="row">
+  {{#each artisans}}
+    <div class="col-md-4 mb-4">
+      <div class="card h-100">
+        <h5>{{this.name}}</h5>
+        <img
+          src="{{this.image}}"
+          alt="{{this.name}}"
+          class="img-fluid mb-4"
+        />
+        <p>{{this.specialty}}</p>
+      </div>
+    </div>
+  {{/each}}
+</div>

@@ -1,3 +1,4 @@
+import Artisan from "../database/models/artisan.model.js";
 import {getAll, getById} from "../services/location.service.js";
 
 export const getLocations = async (req, res) =>{
@@ -12,10 +13,10 @@ export const getLocationById = async (req, res) =>{
 
 
 export const getLocationByParamsId = async (req, res) =>{
-    const {id} = req.params;
-    const location = await getById(id);
+    const location = await getById(req.params.id);
     if(!location){
         return res.status(404).render("404", {title:"404"});    
     }
-    res.render("locationDetails", {layout: "locationDashboard", title:location.name, location});
+    const artisans = await Artisan.find({ location: location._id}).populate("location").lean();
+    res.render("locationDetails", {layout: "locationDashboard", title:location.name, location, artisans});
 };

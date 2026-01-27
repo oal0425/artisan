@@ -1,7 +1,7 @@
 
-const fetchLocationArtisans = () =>{
+/* const fetchLocationArtisans = () =>{
     
-}
+} */
 
 document.addEventListener("DOMContentLoaded", () => {
   //--------------------------
@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   //Import the dark mode toggle button function from main.js
 
-  fetchLocationArtisans();
+  //fetchLocationArtisans();
+  
 
 });

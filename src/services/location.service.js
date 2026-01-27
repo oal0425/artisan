@@ -36,3 +36,5 @@ export const getById = async (id) =>{
         console.error("Error to fetch the location id ", id, " Error: ", error);
     }
 }
+
+
