@@ -24,5 +24,10 @@ export const getNumberAPIArtisans = async (req, res) =>{
 }
 
 export const getById = async (id) =>{
-    return await Artisan.findById(id).lean();
+    try{
+        return await Artisan.findById(id).lean();
+    }catch(error){
+        console.error("Error to fetch the artisan id ", id, " Error: ", error);
+    }
+    
 }

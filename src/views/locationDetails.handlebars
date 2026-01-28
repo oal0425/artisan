@@ -1,31 +1,61 @@
-<div class="container mt-5">
-  <h1>{{location.name}}</h1>
+<!-- ================= PAGE TITLE ================= -->
+<section class="py-5 text-center">
+  <div class="container">
+    <h2 class="fw-bold">Location Details</h2>
+  </div>
+</section>
 
-  <img
-    src="{{location.image}}"
-    alt="{{location.name}}"
-    class="img-fluid mb-4"
-  />
-
-  <p>{{location.description}}</p>
-  <p><strong>Region:</strong> {{location.region}}</p>
-</div>
-
-{{! Add the artisan cards through AJAX }}
-<h2 class="mt-4">Local Artisans</h2>
-
-<div class="row">
-  {{#each artisans}}
-    <div class="col-md-4 mb-4">
-      <div class="card h-100">
-        <h5>{{this.name}}</h5>
+<!-- ================= LOCATION INFO ================= -->
+<section class="py-5 bg-light">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-md-6">
         <img
-          src="{{this.image}}"
-          alt="{{this.name}}"
-          class="img-fluid mb-4"
+          src="{{location.image}}"
+          class="img-fluid rounded shadow"
+          alt="{{location.name}}"
         />
-        <p>{{this.specialty}}</p>
+      </div>
+      <div class="col-md-6">
+        <h3>{{location.name}}</h3>
+        <p>
+          {{location.description}}
+        </p>
+        <p><strong>Region:</strong> {{location.region}}</p>
       </div>
     </div>
+  </div>
+</section>
+
+<!-- ================= ARTISANS ================= -->
+<section class="py-5">
+  <div class="container">
+    {{#each artisans}}
+    <h3 class="text-center mb-4">Local Artisans</h3>
+
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm">
+          <div class="card-body text-center">
+            <img src="{{this.image}}" alt="{{this.name}}" class="img-fluid mb-4" />
+            <h5 class="card-title">{{this.name}}</h5>
+            <p class="card-text">{{this.specialty}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+  </div>
   {{/each}}
-</div>
+</section>
+
+
+<iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d1278.8730198636238!2d-65.82558672822606!3d-26.018712376767866!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9418cd0064ff96a1%3A0x56769b17fad10087!2sArtesan%C3%ADas%20Jorgelina!5e1!3m2!1sen!2sar!4v1769477331501!5m2!1sen!2sar"
+  width="600"
+  height="450"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"
+  referrerpolicy="no-referrer-when-downgrade"
+></iframe>

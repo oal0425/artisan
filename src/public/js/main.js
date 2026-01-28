@@ -37,6 +37,7 @@ const fetchArtisans = (limit=10) => {
                   <div class="card-body">
                     <h5 class="card-title"> ${artisan.name}</h5>
                     <p class="card-text">${artisan.specialty}</p>
+                    <a href="/artisans/${artisan._id}" class="btn btn-primary">View Artisan</a>
                   </div>
               </div>
         </div>
