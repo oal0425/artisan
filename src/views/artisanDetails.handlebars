@@ -31,21 +31,29 @@
 <!-- ================= ARTISANS' PRODUCTS ================= -->
 <section class="py-5">
   <div class="container">
-    {{#each products}}
-    <h3 class="text-center mb-4">Artisans' Products </h3>
-    <div class="row g-4">
-      <div class="col-md-4">
-        <div class="card h-100 shadow-sm">
-          <div class="card-body text-center">
-            <img src="{{this.image}}" alt="{{this.name}}" class="img-fluid mb-4" />
-            <h5 class="card-title">{{this.name}}</h5>
-            <p class="card-text">{{this.description}}</p>
-            <p class="card-text">$ {{this.price}}</p>
+    <h3 class="text-center mb-4">Artisan Products</h3>
+
+    {{#if products.length}}
+      <div class="row g-4">
+        {{#each products}}
+          <div class="col-md-4">
+            <div class="card h-100 shadow-sm">
+              <div class="card-body text-center">
+                <img
+                  src="{{this.image}}"
+                  alt="{{this.name}}"
+                  class="img-fluid mb-3"
+                />
+                <h5 class="card-title">{{this.name}}</h5>
+                <p class="card-text">{{this.description}}</p>
+                <p class="fw-bold">$ {{this.price}}</p>
+              </div>
+            </div>
           </div>
-        </div>
+        {{/each}}
       </div>
-    </div>
-    
+    {{else}}
+      <p class="text-center">No products available for this artisan.</p>
+    {{/if}}
   </div>
-  {{/each}}
 </section>
